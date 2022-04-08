@@ -36,10 +36,12 @@ export class SocketStateService {
   }
 
   public async getFriendSocketIds(userId: string): Promise<string[]> {
-    const { user } = await this.get(userId);
-    const friendSocketIds = [];
+    const result = await this.get(userId);
 
-    for (const friendId of user.friends) {
+    if (!result) return;
+
+    const friendSocketIds = [];
+    for (const friendId of result.user.friends) {
       const result = await this.get(friendId);
       if (result && result.socketId) friendSocketIds.push(result.socketId);
     }

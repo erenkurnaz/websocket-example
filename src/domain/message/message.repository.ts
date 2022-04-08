@@ -26,6 +26,7 @@ export class MessageRepository extends EntityRepository<
         sender: { $in: friendIds.map((id) => new Types.ObjectId(id)) },
         createdAt: { $gte: lastSeen, $lte: new Date() },
       })
+      .sort('-createdAt')
       .populate('sender', 'name')
       .exec();
   }

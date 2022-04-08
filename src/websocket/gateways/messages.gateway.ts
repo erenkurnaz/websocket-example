@@ -79,6 +79,7 @@ export class MessagesGateway
     const socketIs = await this.socketStateService.getFriendSocketIds(
       socket.user._id,
     );
+    if (!socketIs || !socketIs.length) return;
 
     socket.to(socketIs).emit(event, payload);
   }
