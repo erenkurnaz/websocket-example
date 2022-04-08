@@ -1,0 +1,51 @@
+[{
+  "_id": {
+    "$oid": "624a1138cda69df1a7c29caf"
+  },
+  "email": "han@mail.com",
+  "password": "$2b$12$jQgQY6t86EIByeDUGxQyxOMQMjVNPKkefhf.K3iCy3sXPFuF/5tJq",
+  "name": "Han",
+  "surname": "Solo",
+  "friends": [
+    {
+      "$oid": "624a113c721753da2f9e2567"
+    }
+  ],
+  "lastSeen": {
+    "$date": "2022-04-03T21:23:31.964Z"
+  }
+},{
+  "_id": {
+    "$oid": "624a113c721753da2f9e2567"
+  },
+  "email": "obi@mail.com",
+  "password": "$2b$12$Rm3zXfoGD5ooxCGiu4GeU.gPRmJ.L0dqm/3d3iDbcRg3u9uNoYM1u",
+  "name": "Obi Wan",
+  "surname": "Kenobi",
+  "friends": [
+    {
+      "$oid": "624a1138cda69df1a7c29caf"
+    },{
+      "$oid": "624a152057ac013c6375d4e3"
+    }
+  ],
+  "lastSeen": {
+    "$date": "2022-04-03T21:23:31.852Z"
+  }
+},{
+  "_id": {
+    "$oid": "624a152057ac013c6375d4e3"
+  },
+  "email": "anakin@mail.com",
+  "password": "$2b$12$Rm3zXfoGD5ooxCGiu4GeU.gPRmJ.L0dqm/3d3iDbcRg3u9uNoYM1u",
+  "name": "Anakin",
+  "surname": "Skywalker",
+  "friends": [
+    {
+      "$oid": "624a113c721753da2f9e2567"
+    }
+  ],
+  "lastSeen": {
+    "$date": "2022-04-03T21:23:31.852Z"
+  }
+}]
