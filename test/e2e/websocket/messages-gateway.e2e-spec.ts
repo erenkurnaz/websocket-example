@@ -135,7 +135,7 @@ describe('WebSocketGateway', () => {
         expect(ws2.connected).toEqual(true);
         ws2.on(ClientEvents.UNSEEN_MESSAGES, (payload: ITSocketMessage[]) => {
           expect(payload.length).toEqual(2);
-          expect(payload[0].message).toEqual('Offline message.');
+          expect(payload[0].message).toEqual('Offline message 2.');
           expect(payload[0].username).toEqual(WS_USER.name);
           expect(payload[0].createdAt).toBeDefined();
           resolve();
