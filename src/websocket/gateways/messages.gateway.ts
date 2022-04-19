@@ -35,16 +35,17 @@ export class MessagesGateway
   ): Promise<IMessagePayload> {
     if (!message || !socket.user.friends.length) return;
 
-    await this.emitEventToFriends(socket, WsEvents.MESSAGE, {
-      message,
-      username: socket.user.name,
-      createdAt: new Date(),
-    });
-
-    await this.messageRepository.create({
-      message,
-      sender: new Types.ObjectId(socket.user._id),
-    });
+    await Promise.all([
+      await this.emitEventToFriends(socket, WsEvents.MESSAGE, {
+        message,
+        username: socket.user.name,
+        createdAt: new Date(),
+      }),
+      await this.messageRepository.create({
+        message,
+        sender: new Types.ObjectId(socket.user._id),
+      }),
+    ]);
   }
 
   async handleConnection(socket: AuthSocket) {
